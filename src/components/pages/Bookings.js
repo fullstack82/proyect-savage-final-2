@@ -10,9 +10,10 @@ function Bookings() {
     return (
         <div>
             
-            <ExperiencesCard
+            <ExperiencesCard 
             
             />
+           
     
         </div>
     )

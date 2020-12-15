@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+
 function ExperiencesCard(props) {
     return (
         <>
@@ -16,6 +17,7 @@ function ExperiencesCard(props) {
                         <h5 className='cards__item__text'>{props.text}</h5>
                     </div>
                 </Link>
+                
             </li>
         </>
     );

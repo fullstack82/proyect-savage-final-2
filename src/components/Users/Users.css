@@ -1,0 +1,20 @@
+.page.users {
+    display: flex;
+}
+
+.page.users>aside {
+    background-color: #cccccc;
+    border-right: 1px solid black;
+    padding: 10px;
+    width: 220px;
+}
+
+.page.users>main {
+    padding: 20px;
+}
+
+.page.users .toggle {
+    cursor: pointer;
+    width: 340px;
+    text-align: center;
+}

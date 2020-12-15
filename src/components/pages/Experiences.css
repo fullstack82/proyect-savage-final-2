@@ -1,0 +1,19 @@
+h1 {
+    color: blue
+}
+
+.cards__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    
+    
+}
+.cards{
+    background-color: black;
+}
+
+.cards__item {
+    background-color: white;
+}

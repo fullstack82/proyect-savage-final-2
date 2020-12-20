@@ -5,8 +5,9 @@
 }
 
 body {
-    background-image: url('https://tec.mx/sites/default/files/styles/header_full/public/2018-10/portada-cambioclimatico.jpg?itok=9dZdKlpK');
+    background-image: url('https://cdn.holidayguru.es/wp-content/uploads/2017/07/shutterstock_130157048.jpg');
     background-repeat: no-repeat;
+    
 }
 
 .login {
@@ -22,7 +23,7 @@ body {
     width: 600px;
     margin: auto;
     margin-top: 200px;
-    background-image: url('https://img.vixdata.io/pd/jpg-large/es/sites/default/files/btg/curiosidades.batanga.com/files/5-cosas-sobre-el-espacio-y-la-materia-que-debemos-tener-claras.jpg');
+    background-image: url('https://www.astrobitacora.com/wp-content/uploads/2015/04/DSC3968-101956_1500.jpg');
     box-sizing: border-box;
     font-size: 20px;
     color: white

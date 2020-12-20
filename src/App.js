@@ -5,7 +5,7 @@ import Login from './components/pages/Login';
 import Experiences from './components/pages/Experiences'
 import Register from './components/pages/Register'
 import Bookings from './components/pages/Bookings'
-import Footer from './components/Footer'
+
 import './App.css';
 
 

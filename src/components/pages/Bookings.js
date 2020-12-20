@@ -1,22 +1,35 @@
 import { useParams } from "react-router-dom";
 import ExperiencesCard from './ExperiencesCard'
-import './Experiences.css'
+import './Bookings.css'
 import { useExperience } from "../../api";
+import Button from "../Button";
 
 
 function Bookings() {
     const { id } = useParams();
-    const experiences = useExperience(id);
+    const experiencia = useExperience(id);
+    if (!experiencia) return 'Loading...'
     return (
         <div>
-            
-            <ExperiencesCard 
-            
-            />
-           
-    
+            <h1>¡Disfruta de nuestras experiencias salvajes!</h1>
+            <br></br>
+            <div className="cards__container">
+                <div className="cards__wrapper">
+                    <ul className="cards__items">
+                        <ExperiencesCard
+                            key={experiencia.id}
+                            id={experiencia.id}
+                            text={experiencia.description}
+                            label={experiencia.price}
+                        />
+                        
+                    </ul>
+                </div>
+                <button className="reservas" >Haga su reserva aquí</button>
+            </div>
         </div>
     )
+
 }
 
 

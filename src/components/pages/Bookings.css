@@ -1,0 +1,26 @@
+.cards_item_pic-wrap {
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(px, auto);
+    
+}
+
+button {
+    padding: 8px 20px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    
+    
+} .reservas{
+    margin-top: 30px;
+    margin-bottom: 5px;
+    background-color: var(--primary);
+    padding: 12px;
+    font-size: 20px;
+    position: center;
+    
+}
+
+

@@ -11,9 +11,10 @@ button {
     outline: none;
     border: none;
     cursor: pointer;
+    background-color: black
     
-    
-} .reservas{
+} 
+.reservas{
     margin-top: 30px;
     margin-bottom: 5px;
     background-color: var(--primary);

@@ -5,8 +5,8 @@ import Login from './components/pages/Login';
 import Experiences from './components/pages/Experiences'
 import Register from './components/pages/Register'
 import Bookings from './components/pages/Bookings'
-
 import './App.css';
+import Pagos from './components/pages/Pagos';
 
 
 
@@ -29,6 +29,9 @@ function App() {
           </Route>
           <Route path='/experience/:id' >
             <Bookings />
+          </Route>
+          <Route path='/bookings' >
+            <Pagos />
           </Route>
         </Switch>
       </Router>

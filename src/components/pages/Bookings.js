@@ -25,7 +25,7 @@ function Bookings() {
                         
                     </ul>
                 </div>
-                <button className="reservas" >Haga su reserva aquí</button>
+                { <Button to="/bookings" buttonStyle='btn--outline'>Reserve aqui</Button>}
             </div>
         </div>
     )

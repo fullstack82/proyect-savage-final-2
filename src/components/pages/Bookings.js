@@ -1,15 +1,18 @@
-import { useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import ExperiencesCard from './ExperiencesCard'
 import './Bookings.css'
 import { useExperience } from "../../api";
 import Button from "../Button";
 import Footer from "../Footer";
+import { useUser } from "../Users/UserContext";
 
 
 
 function Bookings() {
     const { id } = useParams();
     const experiencia = useExperience(id);
+    const me = useUser();
+    if(!me ) return <Redirect to="/login" />
     if (!experiencia) return 'Loading...'
     return (
         <div className="card">
@@ -28,7 +31,6 @@ function Bookings() {
                 </div>
                 <Button to={'/reservations/' + id} buttonStyle='btn--outline'>Reserve aqui</Button>
             </div>
-          
         </div>
     )
 

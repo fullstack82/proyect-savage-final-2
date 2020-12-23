@@ -3,27 +3,33 @@ import { useSetUser } from '../../components/Users/UserContext'
 import { login } from '../../api'
 import { useHistory } from 'react-router-dom';
 import './Login.css';
-
-
-
+import { useUser } from "../Users/UserContext";
+import { Redirect } from "react-router-dom";
+import ExperiencesCard from "./ExperiencesCard";
 function Login() {
+
     const setMe = useSetUser()
     const history = useHistory()
     const [userName, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
-    const [isError, setError] = useState(false)
+    const [isError, setError] = useState(false);
+
+
+    const me = useUser();
+    if(me ) return <Redirect to="/experiences" />
+
 
     const handleSubmit = async e => {
         e.preventDefault()
         const data = await login(userName, password, email)
         if (data.token) {
             setMe(data)
-            history.push('/')
         } else {
             setError(true)
         }
     }
+
 
     return (
 
@@ -56,5 +62,4 @@ function Login() {
         </div>
     );
 }
-
 export default Login;

@@ -1,7 +1,8 @@
-
+import { useParams } from "react-router-dom";
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import ExperiencesCard from './ExperiencesCard';
+import { useExperience } from "../../api";
 import axios from 'axios'
 import './Payment.css'
 import useFetch from "../../useFetch"
@@ -10,9 +11,12 @@ const stripePromise = loadStripe("pk_test_51I0YBEJbuFpI8QouL9S6CtZvxYQ66rSXNQwoy
 
 
 const CheckoutForm = () => {
+    const { id } = useParams();
+    const experiencia = useExperience(id);
     
     const stripe = useStripe();
     const elements = useElements();
+    if (!experiencia) return 'Loading...'
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -27,51 +31,57 @@ const CheckoutForm = () => {
 
             const { data } = await axios.post('http://localhost:4000/api/reservations', {
                 id,
-            
+
             })
             console.log(data)
         }
     }
 
     return <form className=" card card-body" onSubmit={handleSubmit}>
+
         <h1>Ven a disfrutar de nuestras experiencias</h1>
-        <ExperiencesCard />
+        <ExperiencesCard
+            key={experiencia.id}
+            id={experiencia.id}
+            text={experiencia.description}
+            label={experiencia.price}
+        />
         <legend>Datos Personales</legend>
         <fieldset>
             <ul>
                 <div className="card">
-                <div className="form-group">
-                    <label>
-                        Nombre
+                    <div className="form-group">
+                        <label>
+                            Nombre
                         <input type="text" autoFocus className="form-control" name="nombre" placeholder="Escribe aqui..." />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Apellidos
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Apellidos
                         <input type="text" autoFocus className="form-control" name="apellidos" placeholder="Escribe aqui..." />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Ciudad
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Ciudad
                         <input type="text" autoFocus className="form-control" name="city" placeholder="Escribe aqui..." />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Email
-                        <input type="email" className="form-control" required name="correo" placeholder="Escribe aqui..." />
-                    </label>
-                </div>
-                <CardElement className="form-control" />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Email
+                        <input type="email" className="form-control" required next={experiencia.description} />
+                        </label>
+                    </div>
+                    <CardElement className="form-control" />
                 </div>
             </ul>
         </fieldset>
         <button className="btn btn-success">
             Buy
         </button>
-        
+
     </form>
 }
 

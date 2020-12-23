@@ -4,8 +4,13 @@ export const useUserList = () => useFetch('http://localhost:4000/api/users')
 export const useUserById = (id) => useFetch('http://localhost:4000/api/users/' + id)
 
 
+export const usePayment = (id) => useFetch('http://localhost:4000/api/reservation/' + id)
+export const usePayments = () => useFetch('http://localhost:4000/api/reservations')
+
+
 export const useExperience = (id) => useFetch('http://localhost:4000/api/experience/' + id)
 export const useExperiences = () => useFetch('http://localhost:4000/api/experiences')
+
 
 export const login = async (userName, password, email) => {
     const ret = await fetch('http://localhost:4000/api/users/login/', {

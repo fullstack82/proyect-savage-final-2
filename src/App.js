@@ -6,9 +6,7 @@ import Experiences from './components/pages/Experiences'
 import Register from './components/pages/Register'
 import Bookings from './components/pages/Bookings'
 import './App.css';
-import Pagos from './components/pages/Pagos';
-
-
+import Payment from './components/pages/Payment'
 
 
 function App() {
@@ -30,8 +28,8 @@ function App() {
           <Route path='/experience/:id' >
             <Bookings />
           </Route>
-          <Route path='/bookings' >
-            <Pagos />
+          <Route path='/reservations' >
+            <Payment />
           </Route>
         </Switch>
       </Router>

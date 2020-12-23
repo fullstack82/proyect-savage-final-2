@@ -3,6 +3,8 @@ import ExperiencesCard from './ExperiencesCard'
 import './Bookings.css'
 import { useExperience } from "../../api";
 import Button from "../Button";
+import Footer from "../Footer";
+
 
 
 function Bookings() {
@@ -10,7 +12,7 @@ function Bookings() {
     const experiencia = useExperience(id);
     if (!experiencia) return 'Loading...'
     return (
-        <div>
+        <div className="card">
             <h1>¡Disfruta de nuestras experiencias salvajes!</h1>
             <br></br>
             <div className="cards__container">
@@ -22,11 +24,11 @@ function Bookings() {
                             text={experiencia.description}
                             label={experiencia.price}
                         />
-                        
                     </ul>
                 </div>
-                { <Button to="/bookings" buttonStyle='btn--outline'>Reserve aqui</Button>}
+                { <Button to="/reservations" buttonStyle='btn--outline'>Reserve aqui</Button>}
             </div>
+          
         </div>
     )
 

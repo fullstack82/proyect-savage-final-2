@@ -10,10 +10,10 @@ h1 {
     
     
 }
-.cards{
+
+.card-experiences{
     background-color: rgb(38, 37, 87);
 }
-
 .cards__item {
     background-color: white;
 }

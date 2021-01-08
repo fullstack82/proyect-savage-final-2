@@ -9,6 +9,7 @@ import './App.css';
 import Payment from './components/pages/Payment'
 
 
+
 function App() {
   return (
     <>
@@ -31,6 +32,7 @@ function App() {
           <Route path='/reservations/:id' >
             <Payment />
           </Route>
+
         </Switch>
       </Router>
     </>

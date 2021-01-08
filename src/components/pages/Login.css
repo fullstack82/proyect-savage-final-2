@@ -4,12 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-    background-image: url('https://cdn.holidayguru.es/wp-content/uploads/2017/07/shutterstock_130157048.jpg');
-    background-repeat: no-repeat;
-    
-}
-
 .login {
     border: 6px solid #ccc;
     border-radius: 4px;
@@ -39,7 +33,8 @@ body {
     color: #e22f2f;
     height: 0;
 }
-.login input{
+
+.login input {
     padding: 8px 20px;
     border-radius: 2px;
     outline: none;
@@ -48,6 +43,7 @@ body {
     transition: all 0.3s ease-out;
     font-size: 18px;
 }
+
 .login button {
     margin-top: 30px;
     margin-bottom: 5px;
@@ -65,3 +61,6 @@ body {
     font-size: 10px;
 }
 
+body {
+    background-image: url("https://img2.rtve.es/i/?w=1600&i=1465145185451.jpg");
+}

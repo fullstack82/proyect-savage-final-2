@@ -4,7 +4,9 @@
     grid-auto-rows: minmax(px, auto);
     
 }
-
+.cards{
+    background-color: rgb(38, 37, 87);
+}
 button {
     padding: 8px 20px;
     border-radius: 3px;
@@ -24,4 +26,10 @@ button {
     
 }
 
-
+.card {
+    background-color:rgb(71, 70, 112)
+}
+.btn-mobile{
+    margin: 2px;
+    padding: 14px;
+}
